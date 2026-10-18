@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f4f6f9;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea, button {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+        }
+
+        textarea {
+            min-height: 120px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do Application</h1>
+
+    <form id="todoForm">
+        <label for="itemName">Item Name</label>
+        <input
+            type="text"
+            id="itemName"
+            name="itemName"
+            placeholder="Enter item name"
+            required
+        >
+
+        <label for="itemDescription">Item Description</label>
+        <textarea
+            id="itemDescription"
+            name="itemDescription"
+            placeholder="Enter item description"
+            required
+        ></textarea>
+
+        <button type="submit">Submit To-Do Item</button>
+        <p id="message"></p>
+    </form>
+
+    <script>
+        document.getElementById("todoForm").addEventListener(
+            "submit",
+            async function (event) {
+                event.preventDefault();
+
+                const itemName =
+                    document.getElementById("itemName").value.trim();
+
+                const itemDescription =
+                    document.getElementById("itemDescription").value.trim();
+
+                if (!itemName || !itemDescription) {
+                    document.getElementById("message").textContent =
+                        "Please fill in both fields.";
+                    return;
+                }
+
+                document.getElementById("message").textContent =
+                    "Form validated. Backend integration is pending.";
+            }
+        );
+    </script>
+</body>
+</html>
