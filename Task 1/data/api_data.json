@@ -1,6 +1,12 @@
+
 {
   "project": "Git and GitHub Assignment",
   "status": "success",
-  "version": 1,
-  "message": "Original JSON on main"
+  "version": 2,
+  "message": "JSON updated in the new branch",
+  "features": [
+    "Flask API",
+    "Git branching",
+    "Merge conflict resolution"
+  ]
 }
