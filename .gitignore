@@ -14,3 +14,9 @@ Thumbs.db
 
 # Editor settings
 .vscode/
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
