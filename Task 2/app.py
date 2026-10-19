@@ -1,5 +1,5 @@
 """
-Task 2: Frontend Form with MongoDB Atlas
+Task 2: Frontend Form with MongoDB Atlas for To-Do Items
 - Create a form on the frontend that, when submitted, inserts data into MongoDB Atlas.
 - On success: the user should be redirected to another page displaying the message “Data submitted successfully”.
 - On error: display the error on the same page without redirection.
@@ -56,6 +56,6 @@ def submit_todo_item():
     except PyMongoError:
         app.logger.exception("MongoDB operation failed")
         return jsonify({"error": "Database operation failed"}), 500
-
+    
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
